@@ -11,3 +11,8 @@ void Trunc8::Button_CB(Fl_Widget*, void* userdata) {
     str = trunc8(str).str;
     test_output->value(str.c_str());
 }
+
+// quit option
+void Exit::Terminate(Fl_Widget*, void* userdata) {
+    exit(0);
+}

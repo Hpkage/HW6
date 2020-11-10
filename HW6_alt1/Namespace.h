@@ -10,4 +10,9 @@ namespace Trunc8 {
     void Button_CB(Fl_Widget*, void* userdata);
 }
 
+namespace Exit {
+    // quit option
+    void Terminate(Fl_Widget*, void* userdata);
+}
+
 #endif NAMESPACE_H

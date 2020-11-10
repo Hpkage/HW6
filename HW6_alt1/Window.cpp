@@ -10,11 +10,6 @@
 Fl_Input* test_input = (Fl_Input*)0;
 Fl_Output* test_output = (Fl_Output*)0;
 
-// quit option
-void Terminate(Fl_Widget*, void* userdata) {
-    exit(0);
-}
-
 int main(int argc, char** argv) {
     StringInfo act;
     std::string str;
@@ -32,7 +27,7 @@ int main(int argc, char** argv) {
     } // Fl_Button* o
 
     { Fl_Button* o = new Fl_Button(200, 110, 90, 30, "Quit");
-    o->callback((Fl_Callback*)Terminate);
+    o->callback((Fl_Callback*)Exit::Terminate);
     } // Fl_Button* o
 
     { test_input = new Fl_Input(50, 50, 100, 30, "Input:");
