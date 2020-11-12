@@ -14,6 +14,11 @@ struct record {
 	int units;
 };
 
+void Add(std::map<string, record>& item, record& stuff, string& name) {
+	item.insert({ name, stuff });
+}
+
+
 int main() {
 	std::map<string, record> cart;
 	record shirts{ 20.00, 1 };
