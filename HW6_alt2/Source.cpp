@@ -18,6 +18,10 @@ void Add(std::map<string, record>& item, record& stuff, string& name) {
 	item.insert({ name, stuff });
 }
 
+void remove(std::map<string, record>& item, record& stuff, string& name) {
+	auto iter = item.find(name);
+	item.erase(iter);
+}
 
 int main() {
 	std::map<string, record> cart;
