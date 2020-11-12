@@ -41,6 +41,13 @@ int RandomBetween(int first, int last) {
     return randNum;
 }
 
+void PrintDistribution(const std::map<int, int>& numbers) {
+    for (auto p : numbers) {
+        std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+            << p.first << ' ' << std::string(p.second / 200, '*') << '\n';
+    }
+}
+
 int main() {
     // Seed with a real random value, if available
     random_device r;
