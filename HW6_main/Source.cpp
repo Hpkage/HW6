@@ -35,6 +35,11 @@ int RandomBetweenN(float first, float last) {
     return mean;
 }
 
+int RandomBetween(int first, int last) {
+    srand(time(0));
+    int randNum = rand() % (last - first + 1) + first;
+    return randNum;
+}
 
 int main() {
     // Seed with a real random value, if available
