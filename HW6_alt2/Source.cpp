@@ -14,11 +14,11 @@ struct record {
 	int units;
 };
 
-void Add(std::map<string, record>& item, record& stuff, string& name) {
+void Add(std::map<string, record>& item, record& stuff, const string& name) {
 	item.insert({ name, stuff });
 }
 
-void remove(std::map<string, record>& item, record& stuff, string& name) {
+void remove(std::map<string, record>& item, const string& name) {
 	auto iter = item.find(name);
 	item.erase(iter);
 }
@@ -31,7 +31,15 @@ int main() {
 	record milk{ 2.00, 2 };
 	record hose{ 100.00, 10 };
 
+	Add(cart, shirts, "shirts");
+	Add(cart, hose, "hose");
+	Add(cart, bread, "bread");
+	Add(cart, milk, "milk");
 
+	remove(cart, "hose");
 
+	for (auto i : cart) {
+		cout << i.first << " " << i.second.price << " " << i.second.units << endl;
+	}
 	return 0;
 }
