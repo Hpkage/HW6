@@ -24,6 +24,16 @@ int RandomBetweenU(int first, int last) {
     return mean;
 }
 
+int RandomBetweenN(float first, float last) {
+    // Seed with a real random value, if available
+    random_device r;
+
+    // Choose a random mean between 1 and 6
+    std::default_random_engine e1(r());
+    std::normal_distribution<float> normal_dist(first, last);
+    int mean = abs((int)normal_dist(e1)) % (int)(last - first + 1) + first;
+    return mean;
+}
 
 
 int main() {
